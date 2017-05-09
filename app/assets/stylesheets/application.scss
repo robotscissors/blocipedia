@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+//Navigation
+.navtext {
+  padding-top: 12px;
+  color: #e7eaea;
+}
+
+//Userbox for logins using devise
+.user-box {
+  margin: auto;
+  background-color: #e7eaea;
+  width:25%;
+  text-align: center;
+  padding:10px 10px 20px 10px;
+  border-radius: 10px;
+
+}
+.user-box h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#error_explanation h2{
+  font-size: 1.5rem;
+  color: red;
+  padding-bottom: 5px;
+}
+#error_explanation li{
+  font-size: 1rem;
+  color: red;
+  text-align: left;
+}
