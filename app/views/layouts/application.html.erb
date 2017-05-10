@@ -10,6 +10,11 @@
 <body>
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
+      <%= link_to "BLOCIPEDIA", root_path, :class => 'navbar-brand'  %>
+
+        <!-- <%= link_to 'Wikis Board', wikis_path, :class => 'navbar-link' %>
+        <%= link_to 'About', wikis_path, :class => 'navbar-link' %> -->
+
       <p class="pull-right navtext"><% if user_signed_in? %>
         Signed in as: <strong><%= current_user.email %></strong> |
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
