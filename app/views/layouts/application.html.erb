@@ -8,21 +8,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <%= link_to "BLOCIPEDIA", root_path, :class => 'navbar-brand'  %>
 
-        <!-- <%= link_to 'Wikis Board', wikis_path, :class => 'navbar-link' %>
-        <%= link_to 'About', wikis_path, :class => 'navbar-link' %> -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "BLOCIPEDIA", root_path, :class => 'navbar-brand'  %>
+      </div>
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Wiki Board", wikis_path, :class => 'nav-link' %></li>
+          <li><%= link_to "Create a New Wiki", new_wiki_path, :class => 'nav-link' %></li>
+          <!-- <li class="nav-item"><%= link_to "Wiki's Board", wikis_path, :class => 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'About', wikis_path, :class => 'nav-link' %></li> -->
+          <!-- <%= link_to 'Wikis Board', wikis_path, :class => 'navbar-link' %>
+          <%= link_to 'About', wikis_path, :class => 'navbar-link' %> -->
+        </ul>
+         <ul class="nav navbar-nav navbar-right">
+          <li><p class="sign-in"><% if user_signed_in? %>
+            Signed in as: <strong><%= current_user.email %></strong> | <%= link_to 'Edit profile', edit_user_registration_path %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete  %>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %> - <%= link_to "Sign In", new_user_session_path %>
+          <% end %></p></li>
+        </ul>
 
-      <p class="pull-right navtext"><% if user_signed_in? %>
-        Signed in as: <strong><%= current_user.email %></strong> |
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-        <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
-        <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
-    </p>
     </div>
   </nav>
   <div class = "container">
