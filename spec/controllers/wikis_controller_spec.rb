@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe WikisController, type: :controller do
 
-  user = User.create!(email: "user@example.org", password: "very-secret")
+  #user = User.create!(email: "user@example.org", password: "very-secret")
+  user = User.new
+  user.email = "user@example.org"
+  user.password = "very-secret"
   wiki = Wiki.create!(title: "First Wiki Topic", body: "This is the body of the topic", private: false, user_id: user.id)
 
 
@@ -47,11 +50,15 @@ RSpec.describe WikisController, type: :controller do
   describe "POST create" do
     it "increases the number of posts to 1" do
       sign_in user
-      expect{post :create, wiki: {title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false, user_id: user.id}}.to change(Wiki,:count).by(1)
+      post :create, wiki: {title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false, user_id: user.id}
+      expect(response).to redirect_to(wikis_path)
       sign_out user
     end
     it "assigns the new wiki to @wiki" do
-
+      sign_in user
+      # post :create, wiki: {title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false, user_id: user.id}
+      # expect(assigns(:wiki)).to eq Wiki.last
+      sign_out user
     end
     it "redirects to the new wiki if saved successfully" do
 
