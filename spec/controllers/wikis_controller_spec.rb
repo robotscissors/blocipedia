@@ -9,6 +9,7 @@ RSpec.describe WikisController, type: :controller do
   let(:wiki) { Wiki.create!(title: "First Wiki Topic", body: "This is the body of the topic", private: false, user_id: user.id) }
 
 
+
   describe "GET #index" do
     it "returns http success" do
       user.confirm
@@ -53,6 +54,7 @@ RSpec.describe WikisController, type: :controller do
 
   describe "POST create" do
     it "increases the number of posts to 1" do
+
       user.confirm
       sign_in user
       expect{ post :create, wiki: {title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false, user_id: user.id}}.to change(Wiki, :count).by(1)
