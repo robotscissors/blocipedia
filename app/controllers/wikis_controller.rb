@@ -12,7 +12,7 @@ class WikisController < ApplicationController
   end
 
   def create
-    @wiki = Wiki.new
+    @wiki = Wiki.new(wiki_params)
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
     @wiki.private = params[:wiki][:private]
@@ -34,6 +34,7 @@ class WikisController < ApplicationController
   def update
     @wiki = Wiki.find(params[:id])
     authorize @wiki
+    @wiki.assign_attributes(wiki_params)
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
     @wiki.private = params[:wiki][:private]
@@ -57,6 +58,11 @@ class WikisController < ApplicationController
       flash[:alert] = "Oops! Something happened and we weren't able to delete it."
       render :show
     end
+  end
 
+  private
+  # Using a private method to encapsulate the permissible parameters
+  def wiki_params
+    params.require(:wiki).permit(:title, :body, :private)
   end
 end

@@ -36,11 +36,71 @@
   text-align: center;
   padding:10px 10px 20px 10px;
   border-radius: 10px;
-
 }
 .user-box h2 {
   text-align: center;
   padding-bottom: 20px;
+}
+
+.user-box-signup{
+  margin: auto;
+  background-color: black;
+  width: 400px;
+  padding: 3rem;
+
+  .current-button {
+    // width:50%;
+    background-color: #5cb85c;
+    display: block;
+    font-size: 2rem;
+  }
+  .other-button {
+    // width:50%;
+    background-color: grey;
+    border-color: grey;
+    display: block;
+    font-size: 2rem;
+  }
+  h2 {
+    text-align: center;
+    padding: 40px 10px 10px 10px;
+    font-size: 3rem;
+    color:white;
+  }
+  .field{
+    .form-control {
+      width: 80%;
+      margin:auto;
+      padding-bottom:5px;
+    }
+    padding-bottom:5px;
+  }
+  .remember {
+    width: 80%;
+    margin:auto;
+    color:white;
+  }
+  .action-button {
+    margin:auto;
+    width:80%;
+    display:block;
+    margin-top:10px;
+    margin-bottom:40px;
+  }
+  .cancel-button {
+    margin-bottom:40px;
+  }
+  h3 {
+    text-align: center;
+    padding: 20px 10px 10px 10px;
+    font-size: 2rem;
+    color:lightgrey;
+  }
+  .unhappy {
+    text-align: center;
+    color:lightgrey;
+  }
+
 }
 
 #error_explanation h2{
