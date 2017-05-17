@@ -52,7 +52,7 @@
           <h3>Or downgrade your account?</h3>
           <div class="row">
             <div class="col-md-12 unhappy">
-              <%= button_to "Downgrade Account", new_charge_path, :method => 'get', :class => 'btn btn-primary cancel-button'%>
+              <%= button_to "Downgrade Account", edit_user_downgrade_path(current_user), :method => 'get', :class => 'btn btn-primary cancel-button'%>
             </div>
           </div>
         <% end %>
