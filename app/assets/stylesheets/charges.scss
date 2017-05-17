@@ -1,3 +1,15 @@
 // Place all the styles related to the Charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.charges {
+  width: 350px;
+  margin: 10px auto;
+  h2 {
+    text-align: center;
+  }
+  .stripe-button-div {
+    padding-top: 10px;
+    text-align: center;
+  }
+
+}

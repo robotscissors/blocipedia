@@ -19,10 +19,13 @@
     <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter the description of the wiki" %>
   <% end %>
 
+  <% if current_user.premium? %>
   <div class="form-group">
-    <%= "Keep wiki private" %>
+    <%= "Make wiki private" %>
     <%= f.check_box :private %>
   </div>
+  <% end %>
+
   <div class="form-group">
     <%= f.submit "Save", :class => 'btn btn-success' %>
   </div>
