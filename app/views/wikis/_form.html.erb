@@ -19,10 +19,9 @@
     <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter the description of the wiki" %>
   <% end %>
 
-  <% if current_user.premium? %>
+  <% if current_user.admin? || current_user.premium? %>
   <div class="form-group">
-    <%= "Make wiki private" %>
-    <%= f.check_box :private %>
+    <%= f.check_box :private %> Private Wiki
   </div>
   <% end %>
 

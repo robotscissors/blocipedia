@@ -30,7 +30,7 @@ source 'https://rubygems.org'
    gem 'shoulda'
    gem 'faker'
    gem 'factory_girl_rails'
-   gem 'pry-rails'
+   #gem 'pry-rails'
  end
 
  gem 'bootstrap-sass'
