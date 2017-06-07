@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  resources :wikis
+  resources :wikis do
+    resources :collaborators, only: [:create, :destroy]
+  end
 
   devise_for :users
   resources :charges, only: [:new, :create]

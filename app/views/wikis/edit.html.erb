@@ -6,4 +6,30 @@
   <div class="col-md-8">
     <%= render partial: "form", locals: { wiki: @wiki } %>
   </div>
+  <div class="col-md-4">
+    <%= render partial: "/collaborators/collaborate", locals: { collaborators: @collaborators } %>
+    <% @collaborators.each do |collaborators| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+              <%= "#{collaborators.email}" %><%= link_to " [remove collaborator]", "#{collaborators.id}", method: :destroy %>
+          </h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <%= render partial: "/collaborators/noncollaborate", locals: { noncollaborators: @noncollaborators } %>
+    <% @noncollaborators.each do |noncollaborators| %>
+      <div class="media">
+        <div class="media-body">
+          <h5 class="media-heading">
+            <%= "#{noncollaborators.email}" %>
+            <%= link_to " [add collaborator]", wiki_collaborators_path(noncollaborators), :action => "create", :method => "post" %>
+
+          </h5>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
