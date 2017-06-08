@@ -6,14 +6,15 @@
   <div class="col-md-8">
     <%= render partial: "form", locals: { wiki: @wiki } %>
   </div>
+  <% if current_user.premium? && @wiki.private %>
   <div class="col-md-4">
     <%= render partial: "/collaborators/collaborate", locals: { collaborators: @collaborators } %>
     <% @collaborators.each do |collaborators| %>
       <div class="media">
         <div class="media-body">
-          <h4 class="media-heading">
-              <%= "#{collaborators.email}" %><%= link_to " [remove collaborator]", "#{collaborators.id}", method: :destroy %>
-          </h4>
+          <h5 class="media-heading">
+              <%= "#{collaborators.email}" %><%= link_to " [remove]", collaborator_path(@wiki, :user_id => collaborators), :action => "create", :method => "delete" %>
+          </h5>
         </div>
       </div>
     <% end %>
@@ -25,11 +26,12 @@
         <div class="media-body">
           <h5 class="media-heading">
             <%= "#{noncollaborators.email}" %>
-            <%= link_to " [add collaborator]", wiki_collaborators_path(noncollaborators), :action => "create", :method => "post" %>
+            <%= link_to " [add]", collaborators_path(:wiki_id => @wiki, :user_id => "#{noncollaborators.id}"), :action => "create", :method => "post" %>
 
           </h5>
         </div>
       </div>
     <% end %>
   </div>
+  <% end %>
 </div>
