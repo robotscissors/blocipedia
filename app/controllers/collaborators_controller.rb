@@ -31,6 +31,6 @@ class CollaboratorsController < ApplicationController
   private
   # Using a private method to encapsulate the permissible parameters
   def collaborator_params
-    params.require([:wiki_id, :user_id])
+    params.permit([:wiki_id, :user_id])
   end
 end

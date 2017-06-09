@@ -13,7 +13,7 @@
       <div class="media">
         <div class="media-body">
           <h5 class="media-heading">
-              <%= "#{collaborators.email}" %><%= link_to " [remove]", collaborator_path(@wiki, :user_id => collaborators), :action => "create", :method => "delete" %>
+              <%= "#{collaborators.email} " %><%= link_to "[remove]", collaborator_path(@wiki, :user_id => collaborators), :action => "create", :method => "delete" %>
           </h5>
         </div>
       </div>
@@ -25,8 +25,8 @@
       <div class="media">
         <div class="media-body">
           <h5 class="media-heading">
-            <%= "#{noncollaborators.email}" %>
-            <%= link_to " [add]", collaborators_path(:wiki_id => @wiki, :user_id => "#{noncollaborators.id}"), :action => "create", :method => "post" %>
+            <%= "#{noncollaborators.email} " %>
+            <%= link_to "[add]", collaborators_path(:wiki_id => @wiki, :user_id => "#{noncollaborators.id}"), :action => "create", :method => "post" %>
 
           </h5>
         </div>
