@@ -22,6 +22,7 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'devise'
  gem 'stripe'
+ gem 'friendly_id'
 
  group :development, :test do
    gem 'byebug'
