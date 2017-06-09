@@ -35,7 +35,7 @@ class WikisController < ApplicationController
     #instance variable of all collaborators on this wiki
     @collaborators = @wiki.collaborators.map{ |collaborator| collaborator.user }
     #instance variable of all possible collaborators but not the user or current collaborators
-    @noncollaborators = User.all - @collaborators
+    @noncollaborators = User.all - @collaborators - [current_user]
   end
 
   def update
