@@ -6,4 +6,31 @@
   <div class="col-md-8">
     <%= render partial: "form", locals: { wiki: @wiki } %>
   </div>
+  <% if current_user.premium? && @wiki.private %>
+  <div class="col-md-4">
+    <h2>Collaborators</h2>
+    <% @collaborators.each do |collaborators| %>
+      <div class="media">
+        <div class="media-body">
+          <h5 class="media-heading">
+              <%= "#{collaborators.email} " %><%= link_to "[remove]", collaborator_path(@wiki, :user_id => collaborators), :action => "create", :method => "delete" %>
+          </h5>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <h2>Possible Collaborators</h2>
+    <% @noncollaborators.each do |noncollaborators| %>
+      <div class="media">
+        <div class="media-body">
+          <h5 class="media-heading">
+            <%= "#{noncollaborators.email} " %>
+            <%= link_to "[add]", collaborators_path(:wiki_id => @wiki, :user_id => "#{noncollaborators.id}"), :action => "create", :method => "post" %>
+          </h5>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
 </div>

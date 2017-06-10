@@ -11,6 +11,7 @@
   #encrypted_password:   Faker::Internet.password(8)
   password: "helloworld",
   password_confirmation: "helloworld"
+  #role: :admin
 )
 @testUser.skip_confirmation!
 @testUser.save!

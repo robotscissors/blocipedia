@@ -3,9 +3,10 @@ class CollaboratorsController < ApplicationController
   def create
     #create an entry in the collaborator table
     #collaborator = @user.collaborator.build(wiki: wiki)
-    @collaborator = Collaborator.new
-    @collaborator.user_id = params[:user_id]
-    @collaborator.wiki_id = params[:wiki_id]
+
+    @collaborator = Collaborator.new(collaborator_params)
+    #@collaborator.user_id = params[:user_id]
+    #@collaborator.wiki_id = params[:wiki_id]
 
     if @collaborator.save
       flash[:notice] = "You added a collaborator!"
@@ -31,6 +32,8 @@ class CollaboratorsController < ApplicationController
   private
   # Using a private method to encapsulate the permissible parameters
   def collaborator_params
-    params.require(:wiki_id, :user_id)
+
+    params.permit([:wiki_id, :user_id])
+
   end
 end

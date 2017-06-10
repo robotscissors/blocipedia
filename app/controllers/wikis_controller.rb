@@ -1,6 +1,9 @@
 class WikisController < ApplicationController
+
   def index
-    @wikis = Wiki.all
+    #@wikis = Wiki.all
+    @wikis = policy_scope(Wiki)
+
   end
 
   def show
@@ -28,7 +31,14 @@ class WikisController < ApplicationController
   end
 
   def edit
+
     @wiki = Wiki.friendly.find(params[:id])
+    #instance variable of all collaborators on this wiki
+    #@collaborators = @wiki.collaborators.map{ |collaborator| collaborator.user }
+    @collaborators = @wiki.wiki_collaborators
+    #instance variable of all possible collaborators but not the user or current collaborators
+    @noncollaborators = User.all - @collaborators - [current_user]
+
   end
 
   def update

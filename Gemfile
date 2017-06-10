@@ -23,6 +23,9 @@ source 'https://rubygems.org'
  gem 'devise'
  gem 'stripe'
  gem 'friendly_id'
+ gem 'redcarpet'
+
+
 
  group :development, :test do
    gem 'byebug'
