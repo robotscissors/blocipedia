@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :wikis
   has_many :collaborators, dependent: :destroy
 
+
   private
   def set_default_role
     self.role ||= :standard

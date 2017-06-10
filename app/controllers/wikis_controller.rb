@@ -33,7 +33,8 @@ class WikisController < ApplicationController
   def edit
     @wiki = Wiki.find(params[:id])
     #instance variable of all collaborators on this wiki
-    @collaborators = @wiki.collaborators.map{ |collaborator| collaborator.user }
+    #@collaborators = @wiki.collaborators.map{ |collaborator| collaborator.user }
+    @collaborators = @wiki.wiki_collaborators
     #instance variable of all possible collaborators but not the user or current collaborators
     @noncollaborators = User.all - @collaborators - [current_user]
   end
