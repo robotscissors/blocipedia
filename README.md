@@ -5,6 +5,7 @@ This App is a robust rails project exercising the basics of Rails’ CRUD flexib
 ![screen shot 2018-06-21 at 10 00 10 pm](https://user-images.githubusercontent.com/24664863/41758657-0baf02f8-759f-11e8-8a22-7a905d42c769.png)
 
 ## Upgrade using the STRIPE Gem
+Feature upgrades were managed by using STRIPE, a payment solution. This was a little more tricky but the strip gem made it quick to get a demo going.
 ![screen shot 2018-06-21 at 10 00 37 pm](https://user-images.githubusercontent.com/24664863/41758667-19a2a676-759f-11e8-8bda-545bc02fea73.png)
 
 ## Features and Gems
@@ -12,7 +13,6 @@ One of the best things about using rails is all of the helper libraries and Gems
 
 User roles and accounts were fairly easy to create, manage and integrate into the application using Devise. Without a doubt, it was easy to install and made validation in the application surprisingly a breeze.
 
-Feature upgrades were managed by using STRIPE, a payment solution. This was a little more tricky but the strip gem made it quick to get a demo going.
 
 ## Challenges
 I think the biggest challenge is with TDD. I really love the idea of TDD and BDD. Test driven development is smart and goals and benefits are crystal clear. Personally, I feel like it isn’t as intuitive as it should be and I strive to be a better tester.
