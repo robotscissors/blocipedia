@@ -2,10 +2,13 @@
 This App is a robust rails project exercising the basics of Rails’ CRUD flexibility. The App functions as a Wiki markdown site that allows users to create both public and private Wikis based on the user role. In addition, there is the option of using an upgrade service to upgrade a standard account to a premium role.
 
 ## Devise Login
+Using the Devise gem allows for easy integration of user management. 
+
 ![screen shot 2018-06-21 at 10 00 10 pm](https://user-images.githubusercontent.com/24664863/41758657-0baf02f8-759f-11e8-8a22-7a905d42c769.png)
 
 ## Upgrade using the STRIPE Gem
 Feature upgrades were managed by using STRIPE, a payment solution. This was a little more tricky but the strip gem made it quick to get a demo going.
+
 ![screen shot 2018-06-21 at 10 00 37 pm](https://user-images.githubusercontent.com/24664863/41758667-19a2a676-759f-11e8-8bda-545bc02fea73.png)
 
 ## Features and Gems
